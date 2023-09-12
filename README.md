@@ -111,9 +111,54 @@ urlpatterns = [
 
 # *Request client* ke web aplikasi berbasis Django beserta responnya
 ![DJango Framework](https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png)
+Pertama, *user* atau *client* akan meminta akses atau *resource*. Django akan kemudian akan memproses URL dari *client* dan menyesuaikannya sesuai dengan file `urls.py` (URL Mapping).
+Kedua, Django akan akan membuka file `views.py` dan meminta tampilan. 
+File `models.py` kemudian menangani data yang terkait permintaan pengguna dan folder `template` akan berisi file dengan ekstension html. File yang berisi ekstension html tersebut akan berisi kode-kode html untuk mengatur tulisan, tabel, ukuran, dan lainnya. Setelah selesai diproses, tampilan akan diberikan ke *client* atau *user*.
+*Source*: https://intellipaat.com/blog/tutorial/python-django-tutorial/
+
 # Fungsi Virtual Environment
+Isolasi *Dependencies*
+Virtual environment memungkinkan untuk mengisolasi dependensi proyek sehingga proyek tidak akan saling mengganggu proyek lain.
+
+Mencegah konflik
+Virtual environment membantu mencegah masalah yang mungkin muncul ketika berbagi proyek dengan orang lain.
+
+Keamanan
+Virtual environment memungkinkan untuk mencoba berbagai konfigurasi dan versi python tanpa merusak instalasi Python global pada komputer kita. Virtual environment membatasi akses proyek terhadap instalasi Python global sehingga mencegah perubahan tidak terduga di berbagai proyek python.
+
+Menyesuaikan Versi Python 
+Pneggunaan virtual environment memungkinkan untuk menggunakan versi Python yang berbeda untuk berbagai proyek.
+
+*Source*: https://csguide.cs.princeton.edu/software/virtualenv#:~:text=In%20a%20nutshell%2C%20Python%20virtual,or%20used%20by%20other%20projects.
+
+# Apakah proyek Django tetap bisa dibuat tanpa Virtual Environment
+Proyek Django masih bisa dibuat tanpa menggunakan virtual environment, namun virtual environment disarankan untuk tetap digunakan untuk mencegah berbagai konflik yang bisa terjadi tanpa adanya virtual environment.
+*Source*: https://www.w3schools.com/django/django_create_virtual_environment.php#:~:text=It%20is%20suggested%20to%20have,we%20will%20call%20it%20myworld%20.
 
 # MVC, MVT, dan MVVM
+MVC (Model-View-Controller), MVT (Model-View-Template), dan MVVM (Model-View-ViewModel) adalah tiga pola arsitektur perangkat lunak yang berbeda dalam pengembangan aplikasi web. Ketiga pola arsitektur tersebut memiliki konsep yang mirip dalam memisahkan visualisasi, pemrosesan, dan manajemen data. Ketiga pola arsitektur tersebut bertujuan untuk meningkatkan fleksibilitas, kemudahan pengujian, dan pemeliharaan aplikasi yang mudah.
 
+### MVC (Model-View-Controller):
+**Model:** komponen yang mengelola data dan logika aplikasi. Model berisi struktur data dan operasi terkait data.
+**View:** komponen yang mengatur tampilan antarmuka pengguna. View mengambil data dari Model dan menampilkannya kepada pengguna.
+**Controller:** komponen yang mengelola aliran kontrol dalam aplikasi. *Controller* menerima input dari pengguna, memprosesnya, dan berinteraksi dengan Model dan View sesuai dengan instruksi yang diberikan.
 
+MVC biasanya digunakan dalam pengembangan aplikasi desktop, web, dan mobile.
+Controller bertanggung jawab untuk menerima dan mengirimkan input dari pengguna, mengambil tindakan yang sesuai, dan memperbarui Model dan View sesuai kebutuhan.
 
+### MVT (Model-View-Template):
+**Model:** komponen yang mengelola data dan logika.
+**View:** Tidak seperti *View* dalam MVC, *View* dalam MVT hanya bertanggung jawab untuk mengatur tampilan dan tidak memiliki logika.
+**Template:** komponen yang mengatur cara data ditampilkan. Template menggabungkan data dari Model dengan tampilan.
+
+MVT adalah varian dari MVC dan umumnya digunakan dalam kerangka kerja web yang didasarkan pada Python seperti Django.
+Perbedaan utama adalah penggunaan Template, yang memisahkan tampilan dari logika sehingga memudahkan pengembangan dan pemeliharaan.
+
+### MVVM (Model-View-ViewModel):
+**Model:** komponen yang mengelola data dan logika.
+**View:** komponen yang mengatur tampilan antarmuka pengguna.
+**ViewModel:** komponen yang bertindak sebagai perantara antara *Model* dan *View*. *ViewModel* mengambil data dari *Model* dan mengubahnya menjadi format yang sesuai untuk ditampilkan *View*.
+
+MVVM biasanya digunakan dalam pengembangan aplikasi berbasis data.
+ViewModel memungkinkan binding dua arah antara Model dan View, yang memungkinkan perubahan data secara otomatis dalam tampilan.
+*Source*: https://agus-hermanto.com/blog/detail/mvc-vs-mvp-vs-mvvm-apa-perbedaannya-mana-yang-terbaik-diantara-ketiganya-a
