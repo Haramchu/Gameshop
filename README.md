@@ -133,6 +133,7 @@ Pneggunaan virtual environment memungkinkan untuk menggunakan versi Python yang 
 
 # Apakah proyek Django tetap bisa dibuat tanpa Virtual Environment
 Proyek Django masih bisa dibuat tanpa menggunakan virtual environment, namun virtual environment disarankan untuk tetap digunakan untuk mencegah berbagai konflik yang bisa terjadi tanpa adanya virtual environment.
+
 *Source*: https://www.w3schools.com/django/django_create_virtual_environment.php#:~:text=It%20is%20suggested%20to%20have,we%20will%20call%20it%20myworld%20.
 
 # MVC, MVT, dan MVVM
@@ -161,4 +162,5 @@ Perbedaan utama adalah penggunaan Template, yang memisahkan tampilan dari logika
 
 MVVM biasanya digunakan dalam pengembangan aplikasi berbasis data.
 ViewModel memungkinkan binding dua arah antara Model dan View, yang memungkinkan perubahan data secara otomatis dalam tampilan.
+
 *Source*: https://agus-hermanto.com/blog/detail/mvc-vs-mvp-vs-mvvm-apa-perbedaannya-mana-yang-terbaik-diantara-ketiganya-a
