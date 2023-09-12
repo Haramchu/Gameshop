@@ -110,7 +110,7 @@ urlpatterns = [
 8. Tulis nama aplikasi yang diinginkan dan centang bagian `HTTP Listener on PORT` dan klik `Deploy App` untuk memulai *deployment*.
 
 # *Request client* ke web aplikasi berbasis Django beserta responnya
-[!DJango Framework](https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png)https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png
+![DJango Framework](https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png)https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png)
 # Fungsi Virtual Environment
 
 # MVC, MVT, dan MVVM
