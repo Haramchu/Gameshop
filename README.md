@@ -109,5 +109,11 @@ urlpatterns = [
 7. Sesuaikan versi Python dan masukkan perintah `python manage.py migrate && gunicorn (nama direktori utama).wsgi.` di bagian `Start Command`.
 8. Tulis nama aplikasi yang diinginkan dan centang bagian `HTTP Listener on PORT` dan klik `Deploy App` untuk memulai *deployment*.
 
+# *Request client* ke web aplikasi berbasis Django beserta responnya
+sou
+# Fungsi Virtual Environment
+
+# MVC, MVT, dan MVVM
+
 
 
