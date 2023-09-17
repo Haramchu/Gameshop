@@ -1,7 +1,8 @@
 Nama        : Clement Samuel Marly
+
 NPM         : 2206082114
+
 Kelas       : PBP C
-Adaptable   : https://gamestock.adaptable.app/main/
 
 [Tugas 2](#tugas-2)
 
