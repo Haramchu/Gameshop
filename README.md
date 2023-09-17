@@ -173,3 +173,34 @@ ViewModel memungkinkan binding dua arah antara Model dan View, yang memungkinkan
 
 # Tugas 3
 ## Perbedaan antara form POST dan form GET dalam Django
+1. **POST** 
+- Digunakan untuk mengirim data sensitif
+- Lebih aman
+- Nilai variabel tidak terlihat dalam URL
+- Dapat mengirim data dalam berbagai format
+
+2. **GET** 
+- Digunakan untuk mengirim data - data yang kurang penting
+- Kurang aman
+- Nilai variabel terlihat dalam URL
+- Hanya dapat mengirim data dalam format teks dengan *encoding* ASCII dengan batas maksimum 2047 karakter
+- Dapat di-*cache* oleh browser
+- Mengarah ke permintaan yang tidak mengubah data di server.
+
+*Source*: https://makinrajin.com/blog/perbedaan-post-dan-get/
+
+## Perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data
+
+
+
+## Penggunaan JSON dalam pertukaran data antara aplikasi web modern
+
+## Membuat input form untuk menambahkan objek model
+
+## Membuat input form untuk menambahkan objek model
+
+## 5 fungsi views untuk melihat objek dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
+
+## Membuat routing URL untuk masing-masing views
+
+## Screenshot hasil akses URL di Postman
