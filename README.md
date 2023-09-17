@@ -3,8 +3,9 @@ NPM         : 2206082114
 Kelas       : PBP C
 Adaptable   : https://gamestock.adaptable.app/main/
 
-[Tugas 2](#-membuat-sebuah-proyek-django-baru)
-[Tugas 3](#-perbedaan-antara-form-post-dan-form-get-dalam-django)
+[Tugas 2](#membuat-sebuah-proyek-django-baru)
+
+[Tugas 3](#perbedaan-antara-form-post-dan-form-get-dalam-django)
 
 # Membuat sebuah proyek Django baru
 1. Membuat direktori baru untuk proyek Django baru.
