@@ -191,11 +191,30 @@ ViewModel memungkinkan binding dua arah antara Model dan View, yang memungkinkan
 
 ## Perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data
 
+# XML (EXtensible Markup Language)
+Menggambarkan data dalam struktur *tree* dengan *namespace* untuk kategori data yeng berbeda.
+Hanya dapat diurai (*parsed*) menggunakan pengurai XML
+Mendukung semua tipe data JSON, Boolean, tanggal, gambar, dan *namespace*.
 
+# JSON (JavaScript Object Notation)
+Struktur data seperti pasangan *key-value* dan lebih mudah diurai dengan fungsi JavaScript standar.
+Mendukung pengiriman daa berupa angka, objek, string, array Boolean.
 
-## Penggunaan JSON dalam pertukaran data antara aplikasi web modern
+# HTML (Hypertext Markup Language)
+Biasanya digunakan untuk mengatur halaman dan struktur halaman web, dan bukan pengiriman 
 
-## Membuat input form untuk menambahkan objek model
+*Source*: https://aws.amazon.com/id/compare/the-difference-between-json-xml/
+
+## Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern
+- JSON adalah format pertukaran data yang dapat dibaca baik oleh manusia maupun mesin.  
+- JSON bersifat independen dari setiap bahasa pemrograman dan merupakan turunan dari *Object* JavaScript. Hal tersebut membuat JSON banyak digunakan baik di aplikasi web maupun *mobile*.
+- *Syntax* yang digunakan JSON lebih mudah untuk ditulis serta dibaca. 
+- JSON didesain menyediakan format yang sederhana serta ringkas dan data pada JSON disimpan dalam bentuk *key* dan *value*.
+- JSON dapat diurai menggunakan fungsi JavaScript standar yang lebih mudah diakses. Perbedaan *syntax* dan ukuran *file* JSON juga membuat penguraian (*parsing*) JSON lebih cepat dibandingkan XML.
+- JSON memiliki ukuran file yang lebih kecil dan transmisi data yang lebih cepat.
+- Penguraian JSON lebih aman dibandingkan XML. Struktur XML rentan terhadap *unauthorized modification* dan deklarasi tipe dokumen eksternal yang tidak terstruktur.
+
+*Source*: https://aws.amazon.com/id/compare/the-difference-between-json-xml/
 
 ## Membuat input form untuk menambahkan objek model
 
