@@ -3,7 +3,10 @@ NPM         : 2206082114
 Kelas       : PBP C
 Adaptable   : https://gamestock.adaptable.app/main/
 
-# Membuat sebuah proyek Django baru.
+[Tugas 2](#-membuat-sebuah-proyek-django-baru)
+[Tugas 3](#-perbedaan-antara-form-post-dan-form-get-dalam-django)
+
+# Membuat sebuah proyek Django baru
 1. Membuat direktori baru untuk proyek Django baru.
 2. Buka command prompt di direktori tersebut dan jalankan perintah `python -m venv env` untuk membuat virtual environment untuk Python. Environment akan mengisolasi package dan *dependencies* dari aplikasi sehingga tidak konflik dengan versi lain.
 3. Mengaktifkan virtual environment dengan menjalankan perintah `env\Scripts\activate.bat` (windows).
@@ -164,3 +167,5 @@ MVVM biasanya digunakan dalam pengembangan aplikasi berbasis data.
 ViewModel memungkinkan binding dua arah antara Model dan View, yang memungkinkan perubahan data secara otomatis dalam tampilan.
 
 *Source*: https://agus-hermanto.com/blog/detail/mvc-vs-mvp-vs-mvvm-apa-perbedaannya-mana-yang-terbaik-diantara-ketiganya-a
+
+# Perbedaan antara form POST dan form GET dalam Django
