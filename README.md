@@ -471,14 +471,14 @@ urlpatterns = [
 ### HTML
 ![HTML View](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
 ### JSON
-![JSON View](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+![JSON View](https://github.com/Haramchu/Tugas-2/blob/main/Image/JSON%20View.png)
 ### JSON ID 1
-![JSON View 1](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+![JSON View 1](https://github.com/Haramchu/Tugas-2/blob/main/Image/JSON%20view%201.png)
 ### JSON ID 2
-![JSON View 2](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+![JSON View 2](https://github.com/Haramchu/Tugas-2/blob/main/Image/JSON%20View%202.png)
 ### XML
-![XML View](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+![XML View](https://github.com/Haramchu/Tugas-2/blob/main/Image/XML%20view.png)
 ### XML ID 1
-![XML View 1](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+![XML View 1](https://github.com/Haramchu/Tugas-2/blob/main/Image/XML%20view%201.png)
 ### XML ID 2
-![XML View 2](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+![XML View 2](https://github.com/Haramchu/Tugas-2/blob/main/Image/XML%20view%202.png)
