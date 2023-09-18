@@ -116,7 +116,7 @@ urlpatterns = [
 8. Tulis nama aplikasi yang diinginkan dan centang bagian `HTTP Listener on PORT` dan klik `Deploy App` untuk memulai *deployment*.
 
 ## *Request client* ke web aplikasi berbasis Django beserta responnya
-![DJango Framework](https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png)
+![DJango Framework](https://github.com/Haramchu/Tugas-2/blob/main/Image/PBP-Tugas%202.png)
 Pertama, *user* atau *client* akan meminta akses atau *resource*. Django akan kemudian akan memproses URL dari *client* dan menyesuaikannya sesuai dengan file `urls.py` (URL Mapping).
 Kedua, Django akan akan membuka file `views.py` dan meminta tampilan. 
 File `models.py` kemudian menangani data yang terkait permintaan pengguna dan folder `template` akan berisi file dengan ekstension html. File yang berisi ekstension html tersebut akan berisi kode-kode html untuk mengatur tulisan, tabel, ukuran, dan lainnya. Setelah selesai diproses, tampilan akan diberikan ke *client* atau *user*.
@@ -468,4 +468,17 @@ urlpatterns = [
 ```
 
 ## Screenshot hasil akses URL di Postman
-![DJango Framework](https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png)
+### HTML
+![HTML View](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+### JSON
+![JSON View](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+### JSON ID 1
+![JSON View 1](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+### JSON ID 2
+![JSON View 2](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+### XML
+![XML View](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+### XML ID 1
+![XML View 1](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
+### XML ID 2
+![XML View 2](https://github.com/Haramchu/Tugas-2/blob/main/Image/Html%20View.png)
