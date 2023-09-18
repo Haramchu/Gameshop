@@ -468,3 +468,4 @@ urlpatterns = [
 ```
 
 ## Screenshot hasil akses URL di Postman
+![DJango Framework](https://github.com/Haramchu/Tugas-2/blob/main/PBP-Tugas%202.png)
