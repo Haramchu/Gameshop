@@ -13,7 +13,8 @@ def show_main(request):
         'name': 'Clement Samuel Marly',
         'class': 'PBP C',
         'appname': 'Game Stock',
-        'products': products
+        'products': products,
+        'product_count' : Product.objects.count(),
     }
 
     return render(request, "main.html", context)
