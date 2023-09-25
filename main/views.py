@@ -1,7 +1,8 @@
 from main.models import Item
+from .models import Item
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from main.forms import ProductForm
+from main.forms import Item, ProductForm
 from django.urls import reverse
 from django.http import HttpResponse
 from django.core import serializers
@@ -18,13 +19,14 @@ from django.urls import reverse
 @login_required(login_url='/login')
 def show_main(request):
     products = Item.objects.filter(user=request.user)
+    product_count = products.count()
 
     context = {
         'name': request.user.username,
         'class': 'PBP C',
         'appname': 'Game Stock',
         'products': products,
-        'product_count' : Item.objects.count(),
+        'product_count' : product_count,
         'last_login': request.COOKIES['last_login'],
     }
 
@@ -92,3 +94,26 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+def add_amount(request, product_id):
+    product = Item.objects.get(pk=product_id)
+    if product.amount is not None:  
+            product.amount += 1  
+    else:
+        product.amount = 1 
+    product.save()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def sub_amount(request, product_id):
+    product = Item.objects.get(pk=product_id)
+    product.amount -= 1
+    if product.amount <= 0:
+        product.delete()
+        return redirect('main:show_main')
+    else:
+        product.save()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def delete_product(request, product_id):
+    form = ProductForm(request.POST or None)
+    Item.objects.get(pk=product_id).delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
