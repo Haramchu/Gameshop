@@ -5,9 +5,69 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-<div class = "login">
+    .login {
+        background-color: rgba(255, 255, 255, 0.8); 
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
 
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    form {
+        text-align: left;
+    }
+
+    table {
+        margin: 0 auto;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login_btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<div class="login">
     <h1>Login</h1>
 
     <form method="POST" action="">
@@ -39,7 +99,6 @@
     {% endif %}     
         
     Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
 </div>
 
 {% endblock content %}

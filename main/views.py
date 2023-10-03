@@ -113,7 +113,18 @@ def sub_amount(request, product_id):
         product.save()
     return HttpResponseRedirect(reverse('main:show_main'))
 
-def delete_product(request, product_id):
-    form = ProductForm(request.POST or None)
-    Item.objects.get(pk=product_id).delete()
+def edit_product(request, id):
+    product = Item.objects.get(pk = id)
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    product = Item.objects.get(pk = id)
+    product.delete()
     return HttpResponseRedirect(reverse('main:show_main'))

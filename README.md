@@ -10,6 +10,8 @@ Kelas       : PBP C
 
 [Tugas 4](#tugas-4)
 
+[Tugas 5](#tugas-5)
+
 # Tugas 2
 ## Membuat sebuah proyek Django baru
 1. Membuat direktori baru untuk proyek Django baru.
@@ -812,3 +814,346 @@ def show_main(request):
 5. Tekan tombol `add product` untuk menambahkan produk dan lakukan tiga kali untuk menambahkan tiga produk.
 6. Tekan tombol `logout` untuk kembali ke halaman awal dan daftarkan lagi satu akun sesuai dengan langkah nomor 4.
 7. Ulangi langkah nomor 5 dan dua akun pengguna dengan masing - masing tiga *dummy data* sudah terbuat.
+
+# Tugas 5
+
+Sumber format css : https://www.w3schools.com/css/default.asp
+
+## Manfaat setiap element selector
+1. *Universal Selector*
+*Universal Selector* akan mengubah semua elemen. Biasanya digunakan untuk mengatur *style* dasar web.
+Contoh :
+* {
+    margin: 0;
+    padding: 0;
+}
+2. *Element Selector*
+*Element Selector* memungkinkan mengubah semua properti untuk elemen dengan tag HTML yang sama. Melalui format *style* suatu tag HTML di *style* CSS, semua tag HTML yang sama akan berubah mengikuti format tersebut.
+Contoh :
+```css
+h1 {
+    color: black;
+}
+```
+```HTML
+<h1>Warna Hitam</h1>
+```
+*Style* css diatas akan mengubah semua tag HTML h1.
+*Element Selector* biasanya digunakan saat semua tag HTML yang bersangkutan ingin diubah atau memiliki format awalan. 
+
+3. *ID Selector*
+*ID Selector* menggunakan sebuah ID yang bisa ditambahkan pada tag sebagai *selector*-nya. Melalui penambahan ID pada, tiap tag bisa diatur menggunakan *style* yang diinginkan.
+Contoh :
+```css
+#Warna {
+  background-color: black;
+  color: white;
+}
+```
+```HTML
+<td id = "Warna">Warna tabel hitam dan font colour putih</td>
+```
+*ID Selector* biasanya digunakan untuk memberikan *style* spesifik pada bagian tertentu atau memisahkan format suatu *style* dengan *style* awalan.
+
+4. *Class Selector*
+*Class Selector* akan memungkinkan untuk mengelompokkan elemen dengan karakteristik yang sama.
+Contoh :
+```css
+.box {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+```
+```HTML
+<div class="box">Content1</div>
+<div class="box">Content2</div>
+<div class="box">Content3</div>
+```
+*Class Selector* biasanya digunakan untuk mengelompokkan elemen yang diinginkan karakteristiknya sama.
+
+5. *Inline Styles*
+*Inline Styles* lebih mengarah kepada *style* yang ada di dalam suatu tag HTML dan bukan selector karena hanya memungkinkan format suatu elemen spesifik.
+Contoh:
+```HTML
+<img src="img_girl.jpg" width="500" height="600"/>
+```
+Digunakan untuk mengatur *style* suatu elemen spesifik
+
+6. *Attribute Selector*
+Selektor yang memilih elemen berdasarkan atribut. 
+Contoh:
+```css
+input[type=text] {
+    background: none;
+    padding: 10px;
+}
+```
+```HTML
+<input type="text"/>
+```
+Biasanya digunakan untuk mengatur tampilan elemen berdasarkan nilai atributnya.
+
+7. *Pseudo-Class Selector*
+*Pseudo-Class Selector* memilih elemen berdasarkan keadaan atau posisi dalam halaman web.
+Contoh:
+```css
+a:hover {
+    color: white;
+}
+```
+Digunakan untuk membedakan *style* elemen saat digunakan pengguna (*hover*) atau elemen dengan urutan tertentu dalam daftar (*elemen kedua*).
+
+Terdapat beberapa *selector* lain yang bisa dilihat dalam web  berikut [Selector CSS](https://www.w3schools.com/cssref/css_selectors.php)
+
+## HTML5 Tag
+1. `<nav>`: Tag `<nav>` digunakan untuk menandai bagian dari halaman web yang berisi navigasi atau menu. 
+
+2. `<header>`: Tag `<header>` digunakan untuk menandai bagian atas atau kepala dari sebuah halaman web. Sering digunakan untuk judul, logo, atau elemen lain yang biasanya diletakkan di bagian atas halaman.
+
+3. `<footer>`: Tag `<footer>` digunakan untuk menandai bagian bawah atau kaki dari sebuah halaman web.  Sering digunakan untuk informasi kontak, daftar pustaka, atau elemen lainnya.
+
+4. `<aside>`: Tag `<aside>` digunakan untuk menandai konten yang tidak terkait langsung dengan konten utama tetapi masih terkait atau mendukung konten utama. Bisa berupa tautan terkait, iklan, atau elemen samping lainnya.
+
+5. `<article>`: Tag `<article>` digunakan untuk menandai konten yang dapat tidak memerlukan konteks lain dalam sebuah halaman. Ini bisa berupa posting blog, artikel berita, atau konten lainnya.
+
+6. `<section>`: Tag `<section>` digunakan untuk mengelompokkan konten berdasarkan tema atau topik yang sama. Ini membantu dalam mengatur konten.
+
+7. `<svg>`: Tag `<svg>` digunakan untuk menampilkan grafik vektor dalam dokumen HTML. 
+
+8. `<canvas>`: Tag `<canvas>` digunakan untuk menggambar grafik, animasi, atau visualisasi lainnya menggunakan JavaScript.
+
+9. `<audio>`: Tag `<audio>` digunakan untuk menambahkan audio ke dalam halaman web. 
+
+10. `<video>`: Tag `<video>` digunakan untuk menambahkan video ke dalam halaman web.
+
+Sumber : https://www.tutorialrepublic.com/html-reference/html5-tags.php
+
+## Perbedaan margin dan padding
+1. Margin
+Margin adalah ruang di luar batas elemen. Margin biasanya digunakan untuk mengatur jarak antar elemen tersebut dengan elemen - elemen lain. Margin itu sendiri transparan sehingga elemen tidak akan terpengaruh oleh margin.
+Contoh :
+```css
+#margin {
+    margin: 10px;
+}
+```
+Elemen yang memiliki id margin tersebut akan memiliki margin sebesar 10 *pixel* yang mempengaruhi jarak elemen dengan sekitarnya (mengosongkan area di sekitar border).
+2. Padding adalah ruang di dalam batas elemen. Padding biasanya digunakan untuk mengatur jarak antara isi elemen dan batasnya. Padding sendiri tidak memengaruhi elemen - elemen di luar elemen itu sendiri.
+Contoh :
+```css
+#padding {
+    padding: 10px;
+}
+```
+Elemen yang memiliki id padding tersebut akan memiliki padding sebesar 10 *pixel* yang mengosongkan area di sekitar konten.
+Untuk perbedaan antara margin dan lebih jelas, dapat dilihat gambar berikut:
+![Margin dan Padding](https://github.com/Haramchu/Tugas-2/blob/main/Image/MarginPadding%202.png)
+
+## Perbedaan *framework* CSS Tailwind dan Bootstrap
+**CSS Tailwind** adalah *framework* yang lebih fleksibel dan terdiri dari berbagai kelas utilitas. Hal ini memungkinkan kontrol lebih atas desain dan skalabilitas yang lebih besar
+**Bootstrap** adalah *framework* yang lebih tidak fleksibel dan memiliki bawaan seperti, tombol, navigasi, dan komponen lainnya. Hal ini memungkinkan proses pengembangan yang lebih cepat, namun skalabilitas yang kurang dibandingkan dengan CSS Tailwind.
+Berikut adalah tabel perbedaan CSS Tailwind dan Bootstrap
+| Tailwind | Bootstrap |
+| -------- | -------- |
+| Membangun tampilan dengan menggabungkan kelas-kelas utilitas yang telah didefinisikan sebelumnya.   | Menggunakan gaya dan komponen yang telah didefinisikan, yang memiliki tampilan yang sudah jadi dan dapat digunakan secara langsung.   |
+| Memiliki file CSS yang lebih kecil   | Memiliki file CSS yang lebih besar   |
+| Fleksibilitas dan adaptabilitas tinggi terhadap proyek   | Menghasilkan tampilan yang lebih konsisten di seluruh proyek karena menggunakan komponen yang telah didefinisikan.   |
+| Pembelajaran yang lebih curam karena memerlukan pemahaman terhadap kelas-kelas utilitas yang tersedia dan bagaimana menggabungkannya untuk mencapai tampilan yang diinginkan.   | Pembelajaran yang lebih cepat untuk pemula karena dapat mulai dengan komponen yang telah didefinisikan.   |
+
+Penggunaan Bootstrap dan Tailwind CSS bergantung pada kebutuhan proyek atau web, cara mengatur, dan preferensi setiap orang. Berikut adalah beberapa pertimbangan dalam menggunakan Bootstrap atau Tailwind:
+Tailwind:
+1. Proyek membutuhkan tingkat kustomisasi yang tinggi.
+2. Sudah memiliki pengalaman menggunakan Tailwind.
+3. Saat ingin membuat proyek kecil, proyek dapat diatur setiap detailnya secara spesifik.
+Bootstrap:
+1. Lebih kompatibel pada beberapa tipe web tertentu (terutama web *browser* yang sudah tua)
+2. Membutuhkan waktu yang relatif cepat dalam membuat proyek.
+3. Belum memiliki banyak pengalaman mengenai CSS.
+
+## Kustomisasi halaman *login, register,* dan *add product*
+1. Halaman *login, register,* dan* add product* dikustomisasi melalui *internal style sheet* dengan `<style>`
+2. Mengisi elemen `<style>` dengan format - format untuk tiap tag, id, class, dll. yang diinginkan.
+Contoh *style* login.html:
+```HTML
+<style>
+    body {
+        background-image: url('link image');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login {
+        background-color: rgba(255, 255, 255, 0.8); 
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    form {
+        text-align: left;
+    }
+
+    table {
+        margin: 0 auto;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    input.form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login_btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+```
+Kode *style* CSS diatas akan menghasilkan semua elemen align center di tengah. Bagian body diatur untuk menampilkan latar belakang gambar dan diformat agar gambar sesuai. Bagian login dan elemen lainnya kemudian diberi *background* semi-transparan agar dapat dilihat dengna mudah oleh pengguna.
+
+3. Menyesuaikan `register.html`, `login.html`, dan `create_product`dengan *style* CSS diatas agar format web konsisten.
+4. Buka *virtual environment*, nyalakan server, dan buka http://localhost:8000 untuk melihat hasil *style* dan pengaturan lebih lanjut.
+
+## Kustomisasi halaman main
+1. Membuat navbar, seperti berikut:
+```HTML
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Store Page</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="{% url 'main:logout' %}">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+```
+Navbar diatas akan menghasilkan tombol logout di kanan atas dan text Store Page di kiri atas. Logout kemudian di link agar pengguna bisa logout melalui kanan atas.
+2. Membuat *internal style sheet* dengan `<style>` dan isi sesuai dengan keinginan.
+*Style* `main.html`:
+```css
+<style>
+    body {
+        background-image: url('https://wallpaperaccess.com/full/2109.jpg');
+        background-size: cover;
+        color: white;
+    }
+    div {
+        padding-left: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 20px auto;
+        width: 100%;
+    }
+    
+    table tbody tr:last-child{
+        background-color: rgb(76, 0, 0);
+    }
+
+    th {
+        background-color: black; 
+        color: white; 
+        text-align: center;
+        border: 1px solid #ddd; 
+        padding: 8px; 
+        font-size: 20px;
+    }
+
+    td {
+        text-align: center;
+        border: 1px solid #ddd; 
+        padding: 8px; 
+        font-size: 20px;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #474747
+    }
+    tr:nth-child(odd) {
+        background-color: rgb(39, 39, 39);
+    }
+    
+
+    button {
+        width: 80px; 
+        height: 30px; 
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    #button_navbar{
+        margin-left: 10%;
+        margin: 0;
+    }
+    #text_navbar{
+        margin-right: 10%;
+        margin: 0;
+    }
+    #button_besar {
+        width: 200px;
+        height: 30px; 
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    #align_center{
+        text-align: center;
+    }
+    #small_text{
+        font-size: 16px;
+    }
+</style>
+```
+*Style* diaas berfungsi untuk mengatur ukuran, posisi, warna baik tabel, teks, gambar, dan lainnya.
+Untuk beberapa *style* khusus seperti :
+```css
+tr:nth-child(even) {
+    background-color: #474747
+}
+tr:nth-child(odd) {
+    background-color: rgb(39, 39, 39);
+}
+```
+berfungsi untuk mengatur tabel agar tiap barisan memiliki warna yang berbeda.
+
+```css
+table tbody tr:last-child{
+    background-color: rgb(76, 0, 0);
+}
+```
+berfungsi untuk mengatur warna akhir tabel agar berbeda dari yang lain.
+
+```css
+body {
+    background-image: url('https://wallpaperaccess.com/full/2109.jpg');
+    background-size: cover;
+    color: white;
+}
+```
+berfungsi untuk mengatur latar belakang web.
