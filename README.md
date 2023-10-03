@@ -972,7 +972,7 @@ Bootstrap:
 3. Belum memiliki banyak pengalaman mengenai CSS.
 
 ## Kustomisasi halaman *login, register,* dan *add product*
-1. Halaman *login, register,* dan* add product* dikustomisasi melalui *internal style sheet* dengan `<style>`
+1. Halaman *login, register,* dan *add product* dikustomisasi melalui *internal style sheet* dengan `<style>`
 2. Mengisi elemen `<style>` dengan format - format untuk tiap tag, id, class, dll. yang diinginkan.
 Contoh *style* login.html:
 ```HTML
