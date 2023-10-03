@@ -948,7 +948,7 @@ Contoh :
 ```
 Elemen yang memiliki id padding tersebut akan memiliki padding sebesar 10 *pixel* yang mengosongkan area di sekitar konten.
 Untuk perbedaan antara margin dan lebih jelas, dapat dilihat gambar berikut:
-![Margin dan Padding](https://github.com/Haramchu/Tugas-2/blob/main/Image/MarginPadding%202.png)
+![Margin dan Padding](https://github.com/Haramchu/Tugas-2/blob/main/Image/MarginPadding.png?raw=true)
 
 ## Perbedaan *framework* CSS Tailwind dan Bootstrap
 **CSS Tailwind** adalah *framework* yang lebih fleksibel dan terdiri dari berbagai kelas utilitas. Hal ini memungkinkan kontrol lebih atas desain dan skalabilitas yang lebih besar
