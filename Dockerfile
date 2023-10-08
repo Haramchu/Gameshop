@@ -4,7 +4,7 @@ WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app \
-    DJANGO_SETTINGS_MODULE=Tugas-2.settings \
+    DJANGO_SETTINGS_MODULE=tugas.settings \
     PORT=8000 \
     WEB_CONCURRENCY=2
 
