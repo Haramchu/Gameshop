@@ -16,7 +16,7 @@
     }
 
     .edit {
-        background-color: rgba(255, 255, 255, 0.8); 
+        background-color: rgba(255, 255, 255, 0.8);
         padding: 20px;
         border-radius: 10px;
         text-align: center;
@@ -46,19 +46,20 @@
     }
 </style>
 
-<h1>Edit Product</h1>
-
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Edit Product"/>
-            </td>
-        </tr>
-    </table>
-</form>
+<div class="edit">
+    <h1>Edit Product</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Edit Product" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 
 {% endblock %}

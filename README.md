@@ -12,6 +12,8 @@ Kelas       : PBP C
 
 [Tugas 5](#tugas-5)
 
+[Tugas 6](#tugas-6)
+
 # Tugas 2
 ## Membuat sebuah proyek Django baru
 1. Membuat direktori baru untuk proyek Django baru.
@@ -1157,3 +1159,241 @@ body {
 }
 ```
 berfungsi untuk mengatur latar belakang web.
+
+# Tugas 6
+## Perbedaan *asynchronous programming* dan *synchronous programming*
+### *Synchronous Programming*
+- Operasi dijalankan secara berurutan, satu per satu.
+- Setiap operasi menunggu operasi sebelumnya untuk selesai sebelum melanjutkan ke operasi berikutnya.
+- Bertujuan untuk menjalankan operasi dalam urutan yang diinginkan.
+
+### *Asynchronous Programming*
+- Operasi dapat dijalankan secara bersamaan tanpa harus menunggu operasi sebelumnya selesai.
+- Biasanya digunakan saat ada operasi yang membutuhkan waktu realtif lama.
+- Dapat meningkatkan efisiensi program.
+
+
+## *Event-driven programming*
+Paradigma *event-driven programming* adalah pembuatan pemrograman dimana program merespons *event* yang terjadi, seperti interaksi pengguna, input, atau lainnya. Program tidak mengeksekusi operasi secara berurutan, tetapi program akan menunggu dan merespons *events* yang terjadi.
+Sebuah program tidak harus seluruhnya *event-driven*, bisa hanya untuk beberapa fungsi atau operasi tertentu yang baru akan dijalankan saat suatu *event* terjadi.
+
+Contoh operasi *event-driven* dalam program :
+1. Pengguna menekan tombol Add Product by AJAX
+2. Halaman web akan memunculkan pop up kriteria untuk menambahkan item.
+3. Apabila detail item sudah diisi dan tombol *add product* ditekan, `XMLHttpRequest` objek akan dibuat oleh JavaScript
+4. `XMLHttpRequest` objek mengirimkan *request* ke server
+5. Server memproses *request* tersebut
+6. Server mengembalikan *response* kembali kepada halaman web
+7. *Response* dibaca oleh JavaScript
+8. Halaman web kemudian diperbarui berdasarkan *respones* dan item baru yang didapatkan.
+
+## *Asynchronous programming* pada AJAX
+Asynchronous JavaScript and XML atau disingkat AJAX adalah bahasa pemrograman yang memadukan peramban web (untuk meminta data dari web server) dengan JavaScript dan HTML DOM (untuk menampilkan data). AJAX dapat menggunakan XML untuk mengirim data, tetapi AJAX juga dapat menggunakan teks ataupun JSON untuk mengirim data. AJAX memungkinkan halaman web untuk memperbarui data secara asinkronus dengan mengirimkan data di balik layar. Hal tersebut memungkinkan perubahan elemen data pada halaman tanpa harus *reload* halaman.
+Contoh alur *asynchronous programming* pada AJAX:
+1. Sebuah event terjadi pada halaman web (contohnya tombol submit data ditekan)
+2. Sebuah `XMLHttpRequest` *object* dibuat oleh JavaScript
+3. `XMLHttpRequest` *object* mengirimkan *request* ke server
+4. Server memproses *request* tersebut
+5. Server mengembalikan *response* kembali kepada halaman web
+6. *Response* dibaca oleh JavaScript
+7. Aksi berikutnya akan dipicu oleh JavaScript sesuai dengan langkah yang dibuat pada program
+
+## Perbeedaan Fetch API dengan *library* jQuery
+### Fetch API:
+- Fetch API banyak digunakan web modern dan merupakan API resmi yang didukung oleh semua browser utama.
+- Fetch API menggunakan *promise* yang memungkinkan penanganan *request* asinkron dengan cara yang yang relatif lebih mudah.
+- Fetch API adalah API JavaScript murni dan lebih ringan daripada jQuery. Ini dapat mengurangi *source load* halaman dan mempercepat *load time*.
+
+### jQuery:
+- jQuery memiliki dukungan untuk browser lama dan baru. Ini memungkinkan pembuatan web yang *compatible* dengan berbagai jenis browser baik lama maupun baru.
+- jQuery dianggap lebih mudah digunakan oleh pemula karena memiliki sintaks yang lebih sederhana dan mudah dibaca.
+- jQuery memiliki jumlah plugin yang besar dan dapat membantu dalam membuat berbagai operasi atau fungsi.
+
+### Pendapat
+Berdasarkan penggunaan Fetch API yang digunakan oleh banyak browser utama, saya lebih condong ke penggunaan Fetch API. Walau terkadang membutuhkan waktu lebih untuk menyesuaikan kompatibilitas dengan semua browser, tujuan AJAX dalam memproses *request* asinkronus dapat lebih mudah diproses di dalam Fetch API. Maka dari itu, penggunaan Fetch API lebih disarankan dibandingkan jQuery.
+
+## Implementasi AJAX GET
+1. Buat fungsi baru di `views.py` dengan nama `get_product_json` seperti berikut:
+```python
+def get_product_json(request):
+    product_item = Item.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+```
+fungsi `get_product_json` akan mengambil data JSON berdasarkan *item* yang dimiliki user.
+2. *Import* fungsi `get_product_json` di dalam `urls.py` pada *folder* `main` dan tambahkan *path url* fungsi `get_product_json`.
+```python
+...
+path('get-product/', get_product_json, name='get_product_json'),
+```
+3. Buka `main.html` pada `main/templates` dan hapus bagian kode `table` yang sudah dibuat dan sesuaikan seperti kode berikut:
+```python
+<table id="product_table"></table>
+```
+4. Buat `<Script>` di bawah berkas dan buat fungsi baru di dalam `<Script>` dengan nama `getProducts()`
+```html
+<script>
+    async function getProducts() {
+        return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+    }
+</script>
+```
+Fungsi `getProducts()` akan mengambil data melalui `fetch()` API ke data JSON secara *asynchronous* dan data akan diubah menjadi objek JavaScript.
+5. Buat fungsi baru bernama `refreshProducts()` di dalam `<Script>` yang akan me-*refresh* data item secara *asynchronous*.
+```html
+<script>
+    ...
+    async function refreshProducts() {
+        document.getElementById("product_table").innerHTML = ""
+        const products = await getProducts()
+        let htmlString = `<tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th>Add/Sub</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>`
+        products.forEach((item) => {
+            htmlString += `\n<tr>
+                <td>${item.fields.name}</td>
+                <td>${item.fields.amount}</td>
+                <td>${item.fields.price}</td>
+                <td>${item.fields.description}</td>
+                <td>${item.fields.date_added}</td>
+                <td>
+                    <a href="add_amount/${item.pk}">
+                        <button>
+                            Add
+                        </button>
+                    </a>
+                    <a href="sub_amount/${item.pk}">
+                        <button>
+                            Sub
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a href="edit-product/${item.pk}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a href="delete/${item.pk}">
+                        <button>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            </tr>`
+        })
+        document.getElementById("product_table").innerHTML = htmlString
+    }
+</script>
+```
+Kode disesuaikan dengan button yang diinginkan dan isi tabel.
+`document.getElementById("product_table")` berfungsi untuk mengambil elemen berdasarkan ID sehingga semua *item* akan masuk ke dalam tabel.
+
+## Implementasi AJAX POST
+### Membuat tombol yang membuka sebuah modal dengan form untuk menambahkan item ke dalam basis data dan menampilkan daftar item terbatu tanpa *reload* halaman.
+1. Tambahkan kode berikut di atas kode untuk mengatur tampilan form untuk menambahkan item melalui AJAX.
+```html
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="text" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+Sesuaikan kode dengan *form* atau *model* data aplikasi.
+2. Tambahkan kode berikut untuk menambahkan *button* pada halaman web.
+```html
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+```
+Sesuaikan letak *button* dengan keinginan.
+3. Buat fungsi `addProduct()` di dalam `<Script>` seperti kode berikut:
+```html
+<script>
+    ...
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
+</script>
+```
+`new FormData(document.querySelector('#form'))` berfungsi untuk membuat FormData baru
+`document.getElementById("form").reset()` berfungsi untuk mengosongkan isi *field* form setelah di-*submit*
+4. Tambah fungsi `onclick` pada button "Add Product" untuk menjalankan fungsi `addProduct()` melalui kode berikut:
+```html
+<script>
+...
+document.getElementById("button_add").onclick = addProduct
+</script>
+```
+### Menghubungkan fungsi `create-ajax` dengan fungsi *view* `add_product_ajax`
+1. *Import* `from django.views.decorators.csrf import csrf_exempt` dan `HttpResponseNotFound` di dalam `views.py`.
+2. Buat fungsi `add_product_ajax` di dalam `views.py` yang menerima `request` seperti berikut:
+```python
+@csrf_exempt
+def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        user = request.user
+
+        new_product = Item(name=name, amount=amount, price=price, description=description, user=user)
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
+```
+Sesuaikan kode dengan *model* atau form data.
+2. *Import* fungsi `add_product_ajax` di dalam `urls.py` pada *folder* `main` dan tambahkan *path url* fungsi `add_product_ajax`.
+```python
+...
+path('create-ajax/', add_product_ajax, name='add_product_ajax')
+```
+
+## Melakukan perintah `collectstatic`
+1. Jalankan *virtual environment* dengan `env\Scripts\activate.bat`.
+2. Jalankan perintah `python manage.py collectstatic` untuk mengumpulkan *file static* dari setiap aplikasi ke dalam satu *folder*.
