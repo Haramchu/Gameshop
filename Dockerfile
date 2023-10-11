@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app \
     DJANGO_SETTINGS_MODULE=tugas.settings \
     PORT=8000 \
-    WEB_CONCURRENCY=2
+    WEB_CONCURRENCY=2s
 
 # Install system packages required Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \

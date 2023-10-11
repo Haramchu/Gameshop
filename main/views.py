@@ -150,4 +150,12 @@ def add_product_ajax(request):
 
     return HttpResponseNotFound()
 
+@csrf_exempt
+def delete_product_ajax(request, id):
+    product = Item.objects.get(pk = id)
+    if request.method == 'POST':
+        product.delete()
+        return HttpResponseRedirect(reverse('main:show_main'))
+    return HttpResponseNotFound()
+
 
