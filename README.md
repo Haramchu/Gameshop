@@ -204,7 +204,7 @@ Mendukung semua tipe data JSON, Boolean, tanggal, gambar, dan *namespace*.
 
 # JSON (JavaScript Object Notation)
 Struktur data seperti pasangan *key-value* dan lebih mudah diurai dengan fungsi JavaScript standar.
-Mendukung pengiriman daa berupa angka, objek, string, array Boolean.
+Mendukung pengiriman data berupa angka, objek, string, array Boolean.
 
 # HTML (Hypertext Markup Language)
 Biasanya digunakan untuk mengatur halaman dan struktur halaman web, dan bukan pengiriman data
